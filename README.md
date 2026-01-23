@@ -1,0 +1,1 @@
+# Homebrew Tap\n\nHomebrew formulae for @matheus3301 projects.\n\n## Installation\n\n```bash\nbrew tap matheus3301/tap\nbrew install loopforge\n```\n\n## Available Formulae\n\n- **loopforge** - Autonomous coding loops CLI
