@@ -45,6 +45,6 @@ class Loopforge < Formula
   end
 
   test do
-    system "#{bin}/loopforge", "--version"
+    system "#{bin}/loopforge", "version"
   end
 end
