@@ -2,10 +2,10 @@
 
 # Install kb from its checksummed release source.
 class Kb < Formula
-  desc "Local Markdown knowledge memory for humans and agents"
+  desc "Local Markdown Knowledge Base for humans and AI agents"
   homepage "https://github.com/matheus3301/kb"
-  url "https://github.com/matheus3301/kb/releases/download/v0.1.3/kb_0.1.3_source.tar.gz"
-  sha256 "9bf05b85eda5607add493e0ee421ca6bba8fdf8bce6e22ec89a43fae76be1ba6"
+  url "https://github.com/matheus3301/kb/releases/download/v0.2.0/kb_0.2.0_source.tar.gz"
+  sha256 "98ed2ceaec9e0c71a9473fb33f3aa0c11fa4005e0073a46fe12a20e87dcbf385"
   license "MIT"
 
   depends_on "go" => :build
@@ -14,9 +14,9 @@ class Kb < Formula
     ENV["CGO_ENABLED"] = "0"
     ENV["GOWORK"] = "off"
     ENV["GOTOOLCHAIN"] = "local"
-    ldflags = "-s -w -X main.version=v#{version} -X main.commit=2d934f74dbb2004fb336affe47807ff741712120"
+    ldflags = "-s -w -X main.version=v#{version} -X main.commit=ad69013aa98fbfcc0e22221d292da4ce893ebb06"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kb"
-    pkgshare.install "docs", "skills", "assets", "schemas", "THIRD_PARTY_NOTICES.md"
+    pkgshare.install "docs", "skills", "assets", "schemas", "llms.txt", "THIRD_PARTY_NOTICES.md"
   end
 
   test do
