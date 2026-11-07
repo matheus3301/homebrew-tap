@@ -4,8 +4,8 @@
 class Kb < Formula
   desc "Local Markdown Knowledge Base for humans and AI agents"
   homepage "https://github.com/matheus3301/kb"
-  url "https://github.com/matheus3301/kb/releases/download/v1.0.0/kb_1.0.0_source.tar.gz"
-  sha256 "26e724aa78473578a645a07fc7cf846187982d6c7f1abf1c7dca380fbd3906c1"
+  url "https://github.com/matheus3301/kb/releases/download/v1.1.0/kb_1.1.0_source.tar.gz"
+  sha256 "463758c4db4e9ff586cd95e7e01d57d6b27fca0d4571ed921142d43e931ef94c"
   license "MIT"
 
   depends_on "go" => :build
@@ -14,7 +14,7 @@ class Kb < Formula
     ENV["CGO_ENABLED"] = "0"
     ENV["GOWORK"] = "off"
     ENV["GOTOOLCHAIN"] = "local"
-    ldflags = "-s -w -X main.version=v#{version} -X main.commit=0a6d04d3c25840b2c71c0b98d50478dc6749879a"
+    ldflags = "-s -w -X main.version=v#{version} -X main.commit=8933c0e1e68318a94f2dfdd8a6fa989781e37301"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kb"
     pkgshare.install "docs", "skills", "assets", "schemas", "llms.txt", "THIRD_PARTY_NOTICES.md"
   end
